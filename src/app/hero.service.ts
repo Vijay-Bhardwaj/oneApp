@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HEROES} from '../mock-heros';
 import {Hero} from './Hero';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/Rx'
 
 @Injectable()
 export class HeroService {
@@ -9,10 +9,11 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero> {
-    return new Observable(e => {
+    return  Observable.interval(500).take(HEROES.length).map(t => HEROES[t])
+    /*new Observable(e => {
       HEROES.map(s =>
         setInterval(() => e.next(s), 1000)
       );
-    })
+    })*/
   }
 }

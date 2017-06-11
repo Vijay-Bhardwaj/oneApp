@@ -3,10 +3,10 @@ import {Hero} from '../Hero';
 
 @Component({
   selector: 'app-hero-component',
-  templateUrl: './hero-component.component.html',
-  styleUrls: ['./hero-component.component.css']
+  templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.css']
 })
-export class HeroComponentComponent implements OnInit {
+export class HeroDetailComponent implements OnInit {
   @Input('hero') selectedHero: Hero;
   constructor() { }
 
